@@ -8,6 +8,7 @@ import { studentform, } from '../store/postSlice';
 class Home extends Component {
     state = {
         name:"",
+        roll_number:'',
         physics:0,
         maths:0,
         chemistry:0,
@@ -29,11 +30,12 @@ class Home extends Component {
         
         let data = {
         name:this.state.name,
-        english:this.state.english,
+        roll_number:this.state.roll_number,
+        chemistry:this.state.chemistry,
         maths:this.state.maths,
-        telugu:this.state.telugu,
-        total_marks:this.state.maths+this.state.english+this.state.telugu,
-        total_percentage:(((this.state.maths+this.state.english+this.state.telugu)/300)*100),
+        physics:this.state.physics,
+        total_marks:this.state.maths+this.state.chemistry+this.state.physics,
+        total_percentage:(((this.state.maths+this.state.chemistry+this.state.physics)/300)*100),
         }
         this.props.dispatch(studentform(data))
        
@@ -63,7 +65,7 @@ class Home extends Component {
                 </div>
                 <div class='row ml-3 mt-2'>
                 <label for="name" id="name_label">Roll number:</label>
-                <input type="text" id="roll number"  onChange={this.onChangename}/>
+                <input type="text" id="roll_number"  onChange={this.onChangename}/>
 
                 </div>
 
@@ -74,12 +76,12 @@ class Home extends Component {
                 </div>
                 <div class='row ml-3 mt-2'>
                 <label for="name" id="maths_label">physics:</label>
-                <input type="number" id="maths" onChange={this.onChange} />
+                <input type="number" id="physics" onChange={this.onChange} />
 
                 </div>
                 <div class='row ml-3 mt-2'>
                 <label for="name" id="maths_label">chemistry:</label>
-                <input type="number" id="telugu" onChange={this.onChange} />
+                <input type="number" id="chemistry" onChange={this.onChange} />
 
                 </div>
                 {/* <div class='row ml-3 mt-2'>
