@@ -35,7 +35,7 @@ class Home extends Component {
         maths:this.state.maths,
         physics:this.state.physics,
         total_marks:this.state.maths+this.state.chemistry+this.state.physics,
-        total_percentage:(((this.state.maths+this.state.chemistry+this.state.physics)/300)*100),
+        total_percentage:parseInt((((this.state.maths+this.state.chemistry+this.state.physics)/300)*100)),
         }
         this.props.dispatch(studentform(data))
        
