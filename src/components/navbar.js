@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 class NavBar extends Component {
   render() {
-    const { isAuthenticated } = this.props.state;
+
 
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
